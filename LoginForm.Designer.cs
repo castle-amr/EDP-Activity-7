@@ -67,6 +67,16 @@ namespace WindowsFormsApp1
             this.PasswordTextBox.TabIndex = 4;
             this.PasswordTextBox.UseSystemPasswordChar = true;
 
+            // ShowPasswordCheckBox
+            this.ShowPasswordCheckBox.AutoSize = true;
+            this.ShowPasswordCheckBox.Location = new System.Drawing.Point(420, 248);
+            this.ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
+            this.ShowPasswordCheckBox.Size = new System.Drawing.Size(100, 19);
+            this.ShowPasswordCheckBox.TabIndex = 8;
+            this.ShowPasswordCheckBox.Text = "Show Password";
+            this.ShowPasswordCheckBox.UseVisualStyleBackColor = true;
+            this.ShowPasswordCheckBox.CheckedChanged += new System.EventHandler(this.ShowPasswordCheckBox_CheckedChanged);
+
             // SignInButton
             this.SignInButton.BackColor = System.Drawing.Color.FromArgb(52, 152, 219);
             this.SignInButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -127,5 +137,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.LinkLabel SignUpLinkLabel;
         private System.Windows.Forms.LinkLabel ForgotPasswordLinkLabel;
+        private System.Windows.Forms.CheckBox ShowPasswordCheckBox;
     }
 }

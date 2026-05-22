@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         private Button deleteUserButton;
         private Button refreshButton;
         private Label statusLabel;
+        private CheckBox showPasswordCheckBox;
 
         public UserManagementPanel()
         {
@@ -103,6 +104,16 @@ namespace WindowsFormsApp1
             passwordTextBox.Location = new Point(100, 416);
             passwordTextBox.Size = new Size(200, 23);
             passwordTextBox.UseSystemPasswordChar = true;
+
+            showPasswordCheckBox = new CheckBox();
+            showPasswordCheckBox.Text = "Show Password";
+            showPasswordCheckBox.AutoSize = true;
+            showPasswordCheckBox.Location = new Point(100, 445);
+
+            showPasswordCheckBox.CheckedChanged +=
+            ShowPasswordCheckBox_CheckedChanged;
+
+            Controls.Add(showPasswordCheckBox);
 
             addUserButton.Location = new Point(12, 455);
             addUserButton.Size = new Size(140, 35);
@@ -312,6 +323,13 @@ namespace WindowsFormsApp1
         {
             LoadUsers();
             ClearForm();
+        }
+
+        private void ShowPasswordCheckBox_CheckedChanged(
+        object sender, EventArgs e)
+        {
+        passwordTextBox.UseSystemPasswordChar =
+        !showPasswordCheckBox.Checked;
         }
     }
 }
